@@ -19,8 +19,7 @@ class ArrayEqualitySet {
   }
 
   add(element) {
-    console.assert(!this.contains(element), `element ${element} is
-already in the the set '${this._array}'`);
+    console.assert(!this.contains(element), `element ${element} is already in the set`);
     this._array.push(element);
   }
 
