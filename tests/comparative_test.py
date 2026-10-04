@@ -76,8 +76,6 @@ def test_labor_against_wages(config):
     p0 = np.full(wschema.global_width(), 10)
     pw = make_market(wpart, p0).price
 
-    reset_iteration()
-
     p0 = np.full(lschema.global_width(), 10)
     pl = make_market(lpart, p0).price
 

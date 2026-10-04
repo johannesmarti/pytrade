@@ -12,38 +12,8 @@ from core.participant import *
 
 MIN_PRICE = 0.0001
 
-iteration : int = 0
-
-def reset_iteration() -> None:
-    global iteration
-    iteration = 0
-
-def increment_iteration() -> None:
-    global iteration
-    iteration += 1
-
-def get_iteration() -> int:
-    global iteration
-    return iteration
-
-
-step: int = 0
-
-def reset_step() -> None:
-    global step
-    step = 0
-
-def increment_step() -> None:
-    global step
-    step += 1
-
-def get_step() -> int:
-    global step
-    return step
-
 def one_iteration(participants: Iterable[Participant], prices : Prices) -> VolumeBundle:
-    increment_iteration()
-    logging.debug(f"at iteration {get_iteration()}")
+    logging.debug(f"at next iteration")
     eb = VolumeBundle.zero(prices.shape)
     for p in participants:
         eb += p.participate(prices)
